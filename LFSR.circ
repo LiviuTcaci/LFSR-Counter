@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Pin">
+      <a name="appearance" val="classic"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="main"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="downloadBoard" val="BASYS3"/>
+    <a name="downloadFrequency" val="1000.0"/>
+    <a name="simulationFrequency" val="2.0"/>
+    <boardmap boardname="BASYS3">
+      <mc key="/CLK100MHZ" map="321,237"/>
+      <mc key="/LENLOOP" map="487,236"/>
+      <mc key="/MODE" map="647,323"/>
+      <mc key="/Output_bus_1" pmap="138_258_0,130_249_0,130_263_0,136_274_0,154_262_0,154_248_0,136_245_0"/>
+      <mc key="/Output_bus_2" pmap="273_234_0,225_234_0,180_234_0,130_234_0"/>
+      <mc key="/RST" map="582,238"/>
+      <mc key="/START" map="536,235"/>
+    </boardmap>
+  </circuit>
+  <circuit name="mainnofpga">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="mainnofpga"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="256.0"/>
+    <comp lib="0" loc="(1020,380)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(1190,380)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(1210,290)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(1380,290)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="0" loc="(140,100)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLK100MHZ"/>
+    </comp>
+    <comp lib="0" loc="(140,180)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="RESET"/>
+    </comp>
+    <comp lib="0" loc="(140,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="START"/>
+    </comp>
+    <comp lib="0" loc="(140,270)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="MODE"/>
+    </comp>
+    <comp lib="5" loc="(1100,180)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="5" loc="(1160,180)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="5" loc="(120,350)" name="Button">
+      <a name="label" val="LENLOOP"/>
+    </comp>
+    <comp lib="5" loc="(1270,180)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp lib="5" loc="(1330,180)" name="7-Segment Display">
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp loc="(430,160)" name="ControlUnit">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(430,310)" name="ButtonHandler">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(700,160)" name="LFSR4_5bit">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(700,290)" name="BinaryToBCD">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(700,50)" name="LFSR_Translator">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(940,50)" name="BinaryToBCD">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(960,150)" name="BCDToSevenSegmentNegativeLogic">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp loc="(960,190)" name="BCDToSevenSegmentNegativeLogic">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <comp loc="(970,240)" name="BCDToSevenSegmentNegativeLogic">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(970,280)" name="BCDToSevenSegmentNegativeLogic">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(1000,150)" to="(1000,440)"/>
+    <wire from="(1000,440)" to="(1140,440)"/>
+    <wire from="(1020,190)" to="(1020,380)"/>
+    <wire from="(1040,310)" to="(1070,310)"/>
+    <wire from="(1040,320)" to="(1060,320)"/>
+    <wire from="(1040,330)" to="(1120,330)"/>
+    <wire from="(1040,340)" to="(1110,340)"/>
+    <wire from="(1040,350)" to="(1100,350)"/>
+    <wire from="(1040,360)" to="(1080,360)"/>
+    <wire from="(1040,370)" to="(1090,370)"/>
+    <wire from="(1060,140)" to="(1060,320)"/>
+    <wire from="(1060,140)" to="(1130,140)"/>
+    <wire from="(1070,150)" to="(1070,310)"/>
+    <wire from="(1070,150)" to="(1120,150)"/>
+    <wire from="(1080,160)" to="(1080,360)"/>
+    <wire from="(1080,160)" to="(1110,160)"/>
+    <wire from="(1090,170)" to="(1090,370)"/>
+    <wire from="(1090,170)" to="(1100,170)"/>
+    <wire from="(1100,170)" to="(1100,180)"/>
+    <wire from="(1100,240)" to="(1100,350)"/>
+    <wire from="(1110,160)" to="(1110,180)"/>
+    <wire from="(1110,240)" to="(1110,340)"/>
+    <wire from="(1120,150)" to="(1120,180)"/>
+    <wire from="(1120,240)" to="(1120,330)"/>
+    <wire from="(1130,140)" to="(1130,180)"/>
+    <wire from="(1140,150)" to="(1140,270)"/>
+    <wire from="(1140,150)" to="(1160,150)"/>
+    <wire from="(1140,290)" to="(1140,440)"/>
+    <wire from="(1140,290)" to="(1210,290)"/>
+    <wire from="(1150,160)" to="(1150,270)"/>
+    <wire from="(1150,160)" to="(1170,160)"/>
+    <wire from="(1160,150)" to="(1160,180)"/>
+    <wire from="(1160,240)" to="(1160,270)"/>
+    <wire from="(1170,160)" to="(1170,180)"/>
+    <wire from="(1170,240)" to="(1170,270)"/>
+    <wire from="(1180,160)" to="(1180,180)"/>
+    <wire from="(1180,160)" to="(1200,160)"/>
+    <wire from="(1180,240)" to="(1180,270)"/>
+    <wire from="(1190,170)" to="(1190,180)"/>
+    <wire from="(1190,170)" to="(1220,170)"/>
+    <wire from="(1190,250)" to="(1190,270)"/>
+    <wire from="(1190,250)" to="(1220,250)"/>
+    <wire from="(1190,380)" to="(1190,390)"/>
+    <wire from="(120,350)" to="(210,350)"/>
+    <wire from="(1200,160)" to="(1200,270)"/>
+    <wire from="(1210,310)" to="(1240,310)"/>
+    <wire from="(1210,320)" to="(1230,320)"/>
+    <wire from="(1210,330)" to="(1290,330)"/>
+    <wire from="(1210,340)" to="(1280,340)"/>
+    <wire from="(1210,350)" to="(1270,350)"/>
+    <wire from="(1210,360)" to="(1250,360)"/>
+    <wire from="(1210,370)" to="(1260,370)"/>
+    <wire from="(1220,170)" to="(1220,250)"/>
+    <wire from="(1230,140)" to="(1230,320)"/>
+    <wire from="(1230,140)" to="(1300,140)"/>
+    <wire from="(1240,150)" to="(1240,310)"/>
+    <wire from="(1240,150)" to="(1290,150)"/>
+    <wire from="(1250,160)" to="(1250,360)"/>
+    <wire from="(1250,160)" to="(1280,160)"/>
+    <wire from="(1260,170)" to="(1260,370)"/>
+    <wire from="(1260,170)" to="(1270,170)"/>
+    <wire from="(1270,170)" to="(1270,180)"/>
+    <wire from="(1270,240)" to="(1270,350)"/>
+    <wire from="(1280,160)" to="(1280,180)"/>
+    <wire from="(1280,240)" to="(1280,340)"/>
+    <wire from="(1290,150)" to="(1290,180)"/>
+    <wire from="(1290,240)" to="(1290,330)"/>
+    <wire from="(1300,140)" to="(1300,180)"/>
+    <wire from="(1310,150)" to="(1310,270)"/>
+    <wire from="(1310,150)" to="(1330,150)"/>
+    <wire from="(1320,160)" to="(1320,270)"/>
+    <wire from="(1320,160)" to="(1340,160)"/>
+    <wire from="(1330,150)" to="(1330,180)"/>
+    <wire from="(1330,240)" to="(1330,270)"/>
+    <wire from="(1340,160)" to="(1340,180)"/>
+    <wire from="(1340,240)" to="(1340,270)"/>
+    <wire from="(1350,160)" to="(1350,180)"/>
+    <wire from="(1350,160)" to="(1370,160)"/>
+    <wire from="(1350,240)" to="(1350,270)"/>
+    <wire from="(1360,170)" to="(1360,180)"/>
+    <wire from="(1360,170)" to="(1390,170)"/>
+    <wire from="(1360,250)" to="(1360,270)"/>
+    <wire from="(1360,250)" to="(1390,250)"/>
+    <wire from="(1370,160)" to="(1370,270)"/>
+    <wire from="(1380,290)" to="(1380,460)"/>
+    <wire from="(1390,170)" to="(1390,250)"/>
+    <wire from="(140,100)" to="(430,100)"/>
+    <wire from="(140,180)" to="(200,180)"/>
+    <wire from="(140,200)" to="(210,200)"/>
+    <wire from="(140,270)" to="(450,270)"/>
+    <wire from="(200,180)" to="(200,330)"/>
+    <wire from="(200,180)" to="(210,180)"/>
+    <wire from="(200,330)" to="(210,330)"/>
+    <wire from="(210,140)" to="(210,160)"/>
+    <wire from="(210,140)" to="(460,140)"/>
+    <wire from="(210,220)" to="(210,260)"/>
+    <wire from="(210,260)" to="(700,260)"/>
+    <wire from="(210,290)" to="(210,310)"/>
+    <wire from="(210,290)" to="(460,290)"/>
+    <wire from="(430,100)" to="(460,100)"/>
+    <wire from="(430,160)" to="(440,160)"/>
+    <wire from="(430,180)" to="(480,180)"/>
+    <wire from="(430,240)" to="(430,310)"/>
+    <wire from="(430,240)" to="(480,240)"/>
+    <wire from="(430,310)" to="(480,310)"/>
+    <wire from="(430,50)" to="(430,100)"/>
+    <wire from="(430,50)" to="(480,50)"/>
+    <wire from="(440,160)" to="(440,220)"/>
+    <wire from="(440,220)" to="(480,220)"/>
+    <wire from="(450,200)" to="(450,270)"/>
+    <wire from="(450,200)" to="(480,200)"/>
+    <wire from="(450,70)" to="(450,200)"/>
+    <wire from="(450,70)" to="(480,70)"/>
+    <wire from="(460,100)" to="(460,140)"/>
+    <wire from="(460,140)" to="(460,160)"/>
+    <wire from="(460,160)" to="(460,290)"/>
+    <wire from="(460,160)" to="(480,160)"/>
+    <wire from="(460,290)" to="(480,290)"/>
+    <wire from="(480,140)" to="(700,140)"/>
+    <wire from="(480,30)" to="(480,50)"/>
+    <wire from="(480,30)" to="(710,30)"/>
+    <wire from="(480,90)" to="(480,140)"/>
+    <wire from="(700,140)" to="(700,160)"/>
+    <wire from="(700,180)" to="(700,260)"/>
+    <wire from="(700,290)" to="(750,290)"/>
+    <wire from="(700,310)" to="(730,310)"/>
+    <wire from="(700,50)" to="(700,70)"/>
+    <wire from="(700,70)" to="(720,70)"/>
+    <wire from="(710,30)" to="(710,50)"/>
+    <wire from="(710,50)" to="(720,50)"/>
+    <wire from="(720,120)" to="(720,190)"/>
+    <wire from="(720,120)" to="(950,120)"/>
+    <wire from="(720,190)" to="(740,190)"/>
+    <wire from="(730,110)" to="(730,150)"/>
+    <wire from="(730,110)" to="(940,110)"/>
+    <wire from="(730,150)" to="(740,150)"/>
+    <wire from="(730,240)" to="(730,310)"/>
+    <wire from="(730,240)" to="(750,240)"/>
+    <wire from="(750,280)" to="(750,290)"/>
+    <wire from="(940,50)" to="(950,50)"/>
+    <wire from="(940,70)" to="(940,110)"/>
+    <wire from="(950,50)" to="(950,120)"/>
+    <wire from="(960,150)" to="(1000,150)"/>
+    <wire from="(960,190)" to="(1020,190)"/>
+    <wire from="(970,240)" to="(990,240)"/>
+    <wire from="(970,280)" to="(970,390)"/>
+    <wire from="(970,390)" to="(1190,390)"/>
+    <wire from="(990,240)" to="(990,460)"/>
+    <wire from="(990,460)" to="(1380,460)"/>
+  </circuit>
+  <circuit name="mainfpga">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="mainfpga"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="2.0"/>
+    <comp lib="0" loc="(1120,300)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="CATOD"/>
+      <a name="output" val="true"/>
+      <a name="width" val="7"/>
+    </comp>
+    <comp lib="0" loc="(1120,320)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="ANOD"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(210,250)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLK100MHZ"/>
+    </comp>
+    <comp lib="0" loc="(210,330)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="RESET"/>
+    </comp>
+    <comp lib="0" loc="(210,350)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="START"/>
+    </comp>
+    <comp lib="0" loc="(210,420)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="MODE"/>
+    </comp>
+    <comp lib="5" loc="(190,500)" name="Button">
+      <a name="label" val="LENLOOP"/>
+    </comp>
+    <comp loc="(1010,200)" name="BinaryToBCD">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(1030,300)" name="Display">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(500,250)" name="divisor_frecv200hz">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(500,310)" name="ControlUnit">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(500,460)" name="ButtonHandler">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(770,200)" name="LFSR_Translator">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(770,310)" name="LFSR4_5bit">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp loc="(770,440)" name="BinaryToBCD">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <wire from="(1010,200)" to="(1020,200)"/>
+    <wire from="(1010,220)" to="(1010,260)"/>
+    <wire from="(1020,200)" to="(1020,270)"/>
+    <wire from="(1030,300)" to="(1120,300)"/>
+    <wire from="(1030,320)" to="(1120,320)"/>
+    <wire from="(190,500)" to="(280,500)"/>
+    <wire from="(210,250)" to="(280,250)"/>
+    <wire from="(210,330)" to="(270,330)"/>
+    <wire from="(210,350)" to="(280,350)"/>
+    <wire from="(210,420)" to="(520,420)"/>
+    <wire from="(270,330)" to="(270,480)"/>
+    <wire from="(270,330)" to="(280,330)"/>
+    <wire from="(270,480)" to="(280,480)"/>
+    <wire from="(280,290)" to="(280,310)"/>
+    <wire from="(280,290)" to="(530,290)"/>
+    <wire from="(280,370)" to="(280,410)"/>
+    <wire from="(280,410)" to="(770,410)"/>
+    <wire from="(280,440)" to="(280,460)"/>
+    <wire from="(280,440)" to="(530,440)"/>
+    <wire from="(500,200)" to="(500,250)"/>
+    <wire from="(500,200)" to="(550,200)"/>
+    <wire from="(500,250)" to="(530,250)"/>
+    <wire from="(500,310)" to="(510,310)"/>
+    <wire from="(500,330)" to="(550,330)"/>
+    <wire from="(500,390)" to="(500,460)"/>
+    <wire from="(500,390)" to="(550,390)"/>
+    <wire from="(500,460)" to="(550,460)"/>
+    <wire from="(510,310)" to="(510,370)"/>
+    <wire from="(510,370)" to="(550,370)"/>
+    <wire from="(520,220)" to="(520,350)"/>
+    <wire from="(520,220)" to="(550,220)"/>
+    <wire from="(520,350)" to="(520,420)"/>
+    <wire from="(520,350)" to="(550,350)"/>
+    <wire from="(530,250)" to="(530,290)"/>
+    <wire from="(530,290)" to="(530,310)"/>
+    <wire from="(530,310)" to="(530,440)"/>
+    <wire from="(530,310)" to="(550,310)"/>
+    <wire from="(530,440)" to="(550,440)"/>
+    <wire from="(550,180)" to="(550,200)"/>
+    <wire from="(550,180)" to="(780,180)"/>
+    <wire from="(550,240)" to="(550,290)"/>
+    <wire from="(550,290)" to="(770,290)"/>
+    <wire from="(770,200)" to="(770,220)"/>
+    <wire from="(770,220)" to="(790,220)"/>
+    <wire from="(770,290)" to="(770,310)"/>
+    <wire from="(770,330)" to="(770,410)"/>
+    <wire from="(770,440)" to="(790,440)"/>
+    <wire from="(770,460)" to="(780,460)"/>
+    <wire from="(780,180)" to="(780,200)"/>
+    <wire from="(780,200)" to="(780,300)"/>
+    <wire from="(780,200)" to="(790,200)"/>
+    <wire from="(780,300)" to="(810,300)"/>
+    <wire from="(780,360)" to="(780,460)"/>
+    <wire from="(780,360)" to="(810,360)"/>
+    <wire from="(790,270)" to="(1020,270)"/>
+    <wire from="(790,270)" to="(790,340)"/>
+    <wire from="(790,340)" to="(810,340)"/>
+    <wire from="(790,380)" to="(790,440)"/>
+    <wire from="(790,380)" to="(810,380)"/>
+    <wire from="(800,260)" to="(1010,260)"/>
+    <wire from="(800,260)" to="(800,320)"/>
+    <wire from="(800,320)" to="(810,320)"/>
+  </circuit>
+  <circuit name="mainDesignLFSRfpga">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="mainDesignLFSRfpga"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="2.0"/>
+    <comp lib="0" loc="(340,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLK100MHZ"/>
+    </comp>
+    <comp lib="0" loc="(340,220)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="START_SW"/>
+    </comp>
+    <comp lib="0" loc="(340,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="MODE_SW"/>
+    </comp>
+    <comp lib="0" loc="(560,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="CAT"/>
+      <a name="output" val="true"/>
+      <a name="width" val="7"/>
+    </comp>
+    <comp lib="0" loc="(560,220)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="AN"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="5" loc="(340,260)" name="Button">
+      <a name="label" val="RST_B"/>
+    </comp>
+    <comp lib="5" loc="(340,280)" name="Button">
+      <a name="label" val="LL_B"/>
+    </comp>
+    <comp loc="(560,200)" name="MainDesignLFSR">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+  </circuit>
+  <vhdl name="divisor_frecv200hz">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity divisor_frecv200hz is
+    Port (
+        clk_in_100mhz : in  STD_LOGIC;
+        clk_out_200hz: out STD_LOGIC
+    );
+end divisor_frecv200hz;
+architecture Behavioral of divisor_frecv200hz is
+    signal temporal: STD_LOGIC;
+    signal counter : integer range 0 to 124999 := 0;
+begin
+    frequency_divider: process (clk_in_100mhz) begin
+        if rising_edge(clk_in_100mhz) then
+            if (counter = 124999) then
+                temporal &lt;= NOT(temporal);
+                counter &lt;= 0;
+            else
+                counter &lt;= counter + 1;
+            end if;
+         end if;
+    end process;
+    clk_out_200hz &lt;= temporal;
+end Behavioral;</vhdl>
+  <vhdl name="ButtonHandler">LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+ENTITY ButtonHandler IS
+  PORT (
+    clk: IN std_logic;
+    reset: IN std_logic;
+    button: IN std_logic; --give loop lenghloop
+    looplenghtout: OUT std_logic_vector(4 DOWNTO 0)
+  );
+END ENTITY ButtonHandler;
+ARCHITECTURE Behavioral OF ButtonHandler IS
+  SIGNAL count: integer := 0;
+  SIGNAL button_state, button_prev: std_logic := '0';
+  SIGNAL debounce_counter: integer := 0;
+  SIGNAL debounce_limit: integer := 2; -- Adjust this value based on your clock frequency and desired debounce time
+BEGIN
+  PROCESS (clk)
+  BEGIN
+    IF rising_edge(clk) THEN
+      IF reset = '1' THEN
+        count &lt;= 0;
+        button_state &lt;= '0';
+        button_prev &lt;= '0';
+        debounce_counter &lt;= 0;
+      ELSE
+        button_prev &lt;= button_state;
+        button_state &lt;= button;
+        IF button_state = '1' AND button_prev = '0' THEN
+          debounce_counter &lt;= debounce_limit;
+          count &lt;= count + 1;
+          IF count &gt; 31 THEN
+            count &lt;= 1;
+          END IF;
+        ELSIF debounce_counter &gt; 0 THEN
+          debounce_counter &lt;= debounce_counter - 1;
+        END IF;
+      END IF;
+    END IF;
+  END PROCESS;
+  looplenghtout &lt;= std_logic_vector(to_unsigned(count, looplenghtout'length));
+END ARCHITECTURE Behavioral;</vhdl>
+  <vhdl name="BinaryToBCD">LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+ENTITY BinaryToBCD IS
+  PORT (
+    binary_input: IN std_logic_vector(4 DOWNTO 0);
+    bcd_tens: OUT std_logic_vector(3 DOWNTO 0);
+    bcd_units: OUT std_logic_vector(3 DOWNTO 0)
+  );
+END ENTITY BinaryToBCD_outdated;
+ARCHITECTURE Behavioral OF BinaryToBCD_outdated IS
+BEGIN
+  PROCESS (binary_input)
+    VARIABLE decimal_value: integer;
+  BEGIN
+    decimal_value := to_integer(unsigned(binary_input));
+    bcd_tens &lt;= std_logic_vector(to_unsigned(decimal_value / 10, bcd_tens'length));
+    bcd_units &lt;= std_logic_vector(to_unsigned(decimal_value mod 10, bcd_units'length));
+  END PROCESS;
+END ARCHITECTURE Behavioral;</vhdl>
+  <vhdl name="BCDToSevenSegmentNegativeLogic">LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+ENTITY BCDToSevenSegmentNegativeLogic IS
+  PORT (
+    bcd_input: IN std_logic_vector(3 DOWNTO 0);
+    segment_output: OUT std_logic_vector(6 DOWNTO 0)
+  );
+END ENTITY BCDToSevenSegmentNegativeLogic;
+ARCHITECTURE Behavioral OF BCDToSevenSegmentNegativeLogic IS
+BEGIN
+  PROCESS (bcd_input)
+  BEGIN
+    CASE bcd_input IS
+      WHEN "0000" =&gt; segment_output &lt;= "0111111"; -- 0
+      WHEN "0001" =&gt; segment_output &lt;= "0000110"; -- 1
+      WHEN "0010" =&gt; segment_output &lt;= "1011011"; -- 2
+      WHEN "0011" =&gt; segment_output &lt;= "1001111"; -- 3
+      WHEN "0100" =&gt; segment_output &lt;= "1100110"; -- 4
+      WHEN "0101" =&gt; segment_output &lt;= "1101101"; -- 5
+      WHEN "0110" =&gt; segment_output &lt;= "1111101"; -- 6
+      WHEN "0111" =&gt; segment_output &lt;= "0000111"; -- 7
+      WHEN "1000" =&gt; segment_output &lt;= "1111111"; -- 8
+      WHEN "1001" =&gt; segment_output &lt;= "1101111"; -- 9
+      WHEN OTHERS =&gt; segment_output &lt;= "0000000"; -- Error (all segments on)
+    END CASE;
+  END PROCESS;
+END ARCHITECTURE Behavioral;</vhdl>
+  <vhdl name="ControlUnit">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity ControlUnit is
+    Port (
+        clkCU : in STD_LOGIC;
+        RSTCU : in STD_LOGIC;
+        STRTCU : in STD_LOGIC;
+        STPCU : in STD_LOGIC;
+        LDCU : out STD_LOGIC;
+        RSTCU_lfsr : out STD_LOGIC
+    );
+end ControlUnit;
+
+architecture behavioral of ControlUnit is
+    -- Define the states
+    type state_type is (state_A, state_B, state_C, state_D);
+    signal current_state, next_state: state_type;
+
+    -- Internal signal for ENCU
+    signal internal_ENCU : STD_LOGIC;
+
+begin
+    -- State transition process
+    process(clkCU, RSTCU)
+    begin
+        if RSTCU = '1' then
+            current_state &lt;= state_A;
+        elsif rising_edge(clkCU) then
+            current_state &lt;= next_state;
+        end if;
+    end process;
+
+    -- Next state logic process
+    process(current_state, STRTCU, STPCU)
+    begin
+        case current_state is
+            when state_A =&gt;
+                if STRTCU = '1' then
+                    next_state &lt;= state_B;
+                else
+                    next_state &lt;= state_A;
+                end if;
+
+            when state_B =&gt;
+                next_state &lt;= state_C;
+
+            when state_C =&gt;
+                if STPCU = '1' then
+                    next_state &lt;= state_D;
+                else
+                    next_state &lt;= state_C;
+                end if;
+
+            when state_D =&gt;
+                next_state &lt;= state_A;
+
+            when others =&gt;
+                next_state &lt;= state_A;
+        end case;
+    end process;
+
+    -- Output logic process
+    process(current_state)
+    begin
+        case current_state is
+            when state_A =&gt;
+                internal_ENCU &lt;= '0';
+                LDCU &lt;= '0';
+                RSTCU_lfsr &lt;= '0';
+            when state_B =&gt;
+                internal_ENCU &lt;= '0';
+                LDCU &lt;= '1';
+                RSTCU_lfsr &lt;= '0';
+            when state_C =&gt;
+                internal_ENCU &lt;= '1';
+                LDCU &lt;= '0';
+                RSTCU_lfsr &lt;= '0';
+            when state_D =&gt;
+                internal_ENCU &lt;= '0';
+                LDCU &lt;= '0';
+                RSTCU_lfsr &lt;= '1';
+            when others =&gt;
+                internal_ENCU &lt;= '0';
+                LDCU &lt;= '0';
+                RSTCU_lfsr &lt;= '0';
+        end case;
+    end process;
+end behavioral;</vhdl>
+  <vhdl name="LFSR4_5bit">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity LFSR4_5bit is
+    Port ( CLK : in STD_LOGIC;
+           RESET : in STD_LOGIC;
+           MODE : in STD_LOGIC;
+           LOAD : in STD_LOGIC;
+           N : in STD_LOGIC_VECTOR (4 downto 0);
+           Q : out STD_LOGIC_VECTOR (4 downto 0);
+           STOPCU : out STD_LOGIC);
+end LFSR4_5bit;
+
+architecture Behavioral of LFSR4_5bit is
+    type state_type is (IDLE, generating, waiting);
+    signal state : state_type := IDLE;
+    signal reg : INTEGER := 0;
+    signal count : INTEGER := 0;
+    signal num_generated : INTEGER := 0;
+    signal wait_count : INTEGER := 0;
+    
+    constant f_clk : INTEGER := 2; -- Adjust this value according to your clock frequency (200 Hz in this case)
+    constant delay_cycles : INTEGER := 2 * f_clk;
+
+    type int_array is array (natural range &lt;&gt;) of integer;
+    constant values_4bit : int_array := (
+        0, 8, 12, 14, 7, 10, 13, 11, 9, 4, 6, 5, 3, 2, 1
+    );
+    constant values_5bit : int_array := (
+        0, 16, 24, 28, 30, 23, 22, 19, 18, 15, 14, 29, 13, 6, 5, 26,
+        3, 11, 10, 17, 16, 20, 25, 6, 24, 21, 31, 23, 22, 7, 19, 18
+    );
+
+begin
+    process (CLK, RESET)
+    begin
+        if RESET = '1' then
+            reg &lt;= 0;
+            count &lt;= 0;
+            num_generated &lt;= 0;
+            wait_count &lt;= 0;
+            state &lt;= IDLE;
+            STOPCU &lt;= '0';
+        elsif rising_edge(CLK) then
+            case state is
+                when IDLE =&gt;
+                    if LOAD = '1' then
+                        reg &lt;= 0;
+                        count &lt;= 0;
+                        num_generated &lt;= 0;
+                        state &lt;= generating;
+                    end if;
+                when generating =&gt;
+                    if to_integer(unsigned(N)) &gt; num_generated then
+                        if MODE = '0' then
+                            if count &gt; 15 then
+                                count &lt;= 0;
+                            else
+                                count &lt;= count + 1;
+                            end if;
+                            reg &lt;= values_4bit(count);
+                        else
+                            if count &gt; 32 then
+                                count &lt;= 0;
+                            else
+                                count &lt;= count + 1;
+                            end if;
+                            reg &lt;= values_5bit(count);
+                        end if;
+                        num_generated &lt;= num_generated + 1;
+                    else
+                        state &lt;= waiting;
+                    end if;
+                when waiting =&gt;
+                    if wait_count &lt; delay_cycles then
+                        wait_count &lt;= wait_count + 1;
+                    else
+                        STOPCU &lt;= '1';
+                        state &lt;= IDLE;
+                    end if;
+                when others =&gt;
+                    state &lt;= IDLE;
+            end case;
+        end if;
+    end process;
+
+    Q &lt;= std_logic_vector(to_unsigned(reg, Q'length));
+end Behavioral;</vhdl>
+  <vhdl name="LFSR_Translator">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity LFSR_Translator is
+    Port ( CLK : in STD_LOGIC;
+           MODE : in STD_LOGIC;
+           Q : in STD_LOGIC_VECTOR (4 downto 0);
+           NQ : out STD_LOGIC_VECTOR (4 downto 0));
+end LFSR_Translator;
+
+architecture Behavioral of LFSR_Translator is
+    -- Define lookup tables for 4-bit and 5-bit counters
+    type lookup_array is array (0 to 31) of INTEGER;
+    constant lookup_4bit : lookup_array := (
+        0, 0, 5, 11, 14, 2, 3, 13, -- o to 7
+        7, 9, 6, 10, 11, 5, 0, 0,-- 8 to  15
+        0, 0, 0, 0, 0, 0, 0, 0,--16 to23
+        0, 0, 0, 0, 0, 0, 0, 0--24 to 31
+    );
+    constant lookup_5bit : lookup_array := (
+        0, 31, 11, 21, 15, 17, 24, 8, -- 0 to 7
+        4, 28, 21, 11, 6, 26, 17, 15, -- 8 to  15
+        23, 9, 20, 12, 30, 2, 3, 29, --16 to23
+        7, 25, 26, 6, 13, 31, 0, 31 --24 to 31
+    );
+
+    signal counter : integer := 0;
+    signal output_alternate : boolean := false;
+
+begin
+    -- Translate input Q to N= value based on the MODE input and alternate output values
+    process(CLK)
+        variable temp_N : INTEGER;
+    begin
+        if rising_edge(CLK) then
+            if MODE = '0' then
+                temp_N := lookup_4bit(to_integer(unsigned(Q)));
+                if temp_N = 13 or temp_N = 5 or temp_N = 9 then
+                    if output_alternate then
+                        temp_N := temp_N - 1;
+                    end if;
+                    output_alternate &lt;= not output_alternate;
+                end if;
+            else
+                temp_N := lookup_5bit(to_integer(unsigned(Q)));
+                if temp_N = 23 or temp_N = 19 or temp_N = 28 or temp_N = 17 or temp_N = 11 or temp_N = 6 or temp_N = 15 then
+                    if output_alternate then
+                        temp_N := temp_N - 1;
+                    end if;
+                    output_alternate &lt;= not output_alternate;
+                end if;
+            end if;
+            NQ &lt;= std_logic_vector(to_unsigned(temp_N, 5));
+
+            -- Update the counter for output alternation
+            counter &lt;= counter + 1;
+            if counter = 1 then
+                counter &lt;= 0;
+            end if;
+        end if;
+    end process;
+
+end Behavioral;</vhdl>
+  <vhdl name="Seven_segment_LED_Display_Controller">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Seven_segment_LED_Display_Controller is
+    Port (
+        clock_100Mhz       : in  STD_LOGIC;
+        reset              : in  STD_LOGIC;
+        input_number       : in  STD_LOGIC_VECTOR(4 downto 0);
+        Anode_Activate     : out STD_LOGIC_VECTOR(1 downto 0);
+        LED_out            : out STD_LOGIC_VECTOR(6 downto 0)
+    );
+end Seven_segment_LED_Display_Controller;
+
+architecture Behavioral of Seven_segment_LED_Display_Controller is
+    signal LED_BCD                  : STD_LOGIC_VECTOR(3 downto 0);
+    signal refresh_counter          : STD_LOGIC_VECTOR(17 downto 0) := (others =&gt; '0');
+    signal LED_activating_counter   : STD_LOGIC := '0';
+
+begin
+    -- Refresh counter
+    process (clock_100Mhz, reset)
+    begin
+        if reset = '1' then
+            refresh_counter &lt;= (others =&gt; '0');
+        elsif rising_edge(clock_100Mhz) then
+            refresh_counter &lt;= refresh_counter + 1;
+        end if;
+    end process;
+
+    LED_activating_counter &lt;= refresh_counter(17);
+
+    -- LED anode activating signals and BCD calculation
+    process (LED_activating_counter, input_number)
+    begin
+        case LED_activating_counter is
+            when '0' =&gt;
+                Anode_Activate &lt;= "01";
+                LED_BCD &lt;= input_number(4 downto 3) &amp; "00";
+            when '1' =&gt;
+                Anode_Activate &lt;= "10";
+                LED_BCD &lt;= input_number(2 downto 0) &amp; "0";
+            when others =&gt;
+                Anode_Activate &lt;= "01";
+                LED_BCD &lt;= input_number(4 downto 3) &amp; "00";
+        end case;
+    end process;
+
+    -- LED cathode patterns
+    process (LED_BCD)
+    begin
+        case LED_BCD is
+            when "0000" =&gt; LED_out &lt;= "0000001"; -- "0"
+            when "0001" =&gt; LED_out &lt;= "1001111"; -- "1"
+            when "0010" =&gt; LED_out &lt;= "0010010"; -- "2"
+            when "0011" =&gt; LED_out &lt;= "0000110"; -- "3"
+            when "0100" =&gt; LED_out &lt;= "1001100"; -- "4"
+            when "0101" =&gt; LED_out &lt;= "0100100"; -- "5"
+            when "0110" =&gt; LED_out &lt;= "0100000"; -- "6"
+            when "0111" =&gt; LED_out &lt;= "0001111"; -- "7"
+            when "1000" =&gt; LED_out &lt;= "0000000"; -- "8"
+            when "1001" =&gt; LED_out &lt;= "0000100"; -- "9"
+            when others =&gt; LED_out &lt;= "0000001"; -- "0"
+        end case;
+    end process;
+
+end Behavioral;</vhdl>
+  <vhdl name="MainDesignLFSR">LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY MainDesignLFSR IS
+  PORT (
+    CLK: IN std_logic;
+    START: IN std_logic;
+    MODE: IN std_logic;
+    RESET: IN std_logic;
+    LENLOOP: IN std_logic;
+    CATOD: out std_logic_vector(6 downto 0);
+    ANOD: out std_logic_vector(3 downto 0)
+  );
+END ENTITY MainDesignLFSR;
+
+    ARCHITECTURE Structural OF MainDesignLFSR IS
+  SIGNAL clksgn200hz, LDCUsgn, RSTCU_lfsrsgn, looplenghtoutsgn, stoptocusgn: std_logic;
+  signal NQsgn, Qsgn, Nsgn :std_logic_vector(4 downto 0);
+  signal bcd_tens_1, bcd_units_0, bcd_tens_3, bcd_units_2: std_logic_vector (3 downto 0);
+
+COMPONENT divisor_frecv200hz is
+    Port (
+        clk_in_100mhz : in  STD_LOGIC;
+        clk_out_200hz: out STD_LOGIC
+    );
+end COMPONENT;
+
+
+COMPONENT ControlUnit is
+    Port (
+        clkCU : in STD_LOGIC;
+        RSTCU : in STD_LOGIC;
+        STRTCU : in STD_LOGIC;
+        STPCU : in STD_LOGIC;
+        LDCU : out STD_LOGIC;
+        RSTCU_lfsr : out STD_LOGIC
+    );
+end COMPONENT;
+COMPONENT ButtonHandler IS
+  PORT (
+    clk: IN std_logic;
+    reset: IN std_logic;
+    button: IN std_logic;
+    looplenghtout: OUT std_logic_vector(4 DOWNTO 0)
+  );
+END COMPONENT;
+
+
+COMPONENT LFSR4_5bit is
+    Port ( CLK : in  STD_LOGIC;
+           RESET : in  STD_LOGIC;
+           LOAD : in  STD_LOGIC;
+           MODE : in  STD_LOGIC;
+           N : out  STD_LOGIC_VECTOR (4 downto 0);
+           Q : out  STD_LOGIC_VECTOR (4 downto 0);
+           STOP : out STD_LOGIC
+          );
+end COMPONENT;
+
+COMPONENT LFSR_translator is
+    Port (
+        CLKLFSRT : in STD_LOGIC;
+        MODE : in STD_LOGIC;
+        Q : in STD_LOGIC_VECTOR (4 downto 0);
+        NQ : out STD_LOGIC_VECTOR (4 downto 0)
+    );
+end COMPONENT;
+
+COMPONENT BinaryToBCD is
+    Port (
+        clk: IN std_logic;
+        binary_input: IN std_logic_vector(4 DOWNTO 0);
+    bcd_tens: OUT std_logic_vector(3 DOWNTO 0);
+    bcd_units: OUT std_logic_vector(3 DOWNTO 0)
+
+    );
+end COMPONENT;
+
+COMPONENT Display is
+    Port (
+        clk: in std_logic;
+        looplen_unit: in std_logic_vector(3 downto 0);
+        looplen_tens: in std_logic_vector(3 downto 0);
+        lfsrout_unit: in std_logic_vector(3 downto 0);
+        lfsrout_tens: in std_logic_vector(3 downto 0);
+        cat: out std_logic_vector(6 downto 0);
+        an: out std_logic_vector(3 downto 0)
+    );
+end COMPONENT;
+
+
+BEGIN
+    freq_div: divisor_frecv200hz
+    port map (
+        clk_in_100mhz =&gt; CLK,
+        clk_out_200hz =&gt; clksgn200hz
+     );
+
+    -- Instantiate control unit
+    CU_inst: ControlUnit
+    PORT MAP (
+     clkCU =&gt;clksgn200hz,
+       RSTCU =&gt; RESET,
+       STRTCU =&gt; START,
+       STPCU =&gt; stoptocusgn,
+       LDCU =&gt; LDCUsgn,
+       RSTCU_lfsr =&gt; RSTCU_lfsrsgn
+    );
+
+    BottonH_inst: ButtonHandler
+    port map (
+    clk =&gt; clksgn200hz,
+        reset =&gt; RESET,
+        button =&gt; LENLOOP,
+        looplenghtout =&gt; Nsgn
+            );
+
+  -- Instantiate LFSR
+  LFSR_inst: LFSR4_5bit
+    PORT MAP (
+             CLK =&gt; clksgn200hz,
+           RESET =&gt; RSTCU_lfsrsgn,
+           LOAD =&gt; LDCUsgn,
+           MODE =&gt; MODE,
+           N =&gt; Nsgn,
+           Q =&gt; Qsgn,
+           STOP =&gt; stoptocusgn
+    );
+    
+    LFSRTinst: LFSR_translator
+    port map (
+        CLKLFSRT =&gt; clksgn200hz,
+        MODE =&gt; MODE,
+        Q =&gt; Qsgn,
+        NQ =&gt; NQsgn
+    );
+
+BTBCB: BinaryToBCD
+  PORT map(
+    clk =&gt; clksgn200hz,
+    binary_input =&gt; NQsgn,
+    bcd_tens =&gt; bcd_tens_3,
+    bcd_units =&gt; bcd_units_2
+    );
+
+BTBCB2: BinaryToBCD
+  PORT map(
+  clk =&gt; clksgn200hz,
+    binary_input =&gt; NQsgn,
+    bcd_tens =&gt; bcd_tens_1,
+    bcd_units =&gt; bcd_units_0
+    );
+DCPLY: Display
+    port map(
+        clk =&gt; clksgn200hz,
+        looplen_unit =&gt; bcd_units_0,
+        looplen_tens =&gt; bcd_tens_1,
+        lfsrout_unit =&gt; bcd_units_2,
+        lfsrout_tens =&gt; bcd_tens_3,
+        cat =&gt; CATOD,
+        an =&gt; ANOD
+    );
+
+END ARCHITECTURE Structural;</vhdl>
+  <vhdl name="Display">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Display is
+    Port (
+        clk: in std_logic;
+        looplen_unit: in std_logic_vector(3 downto 0);
+        looplen_tens: in std_logic_vector(3 downto 0);
+        lfsrout_unit: in std_logic_vector(3 downto 0);
+        lfsrout_tens: in std_logic_vector(3 downto 0);
+        cat: out std_logic_vector(6 downto 0);
+        an: out std_logic_vector(3 downto 0)
+    );
+end Display;
+
+architecture Behavioral of Display is
+    signal counter: std_logic_vector(16 downto 0) := (others =&gt; '0');
+    signal selection: std_logic_vector(1 downto 0);
+    signal decoder: std_logic_vector(3 downto 0);
+begin
+    process(clk)
+    begin
+        if (rising_edge(clk)) then
+            counter &lt;= counter + 1;
+        end if;
+    end process;
+
+    selection &lt;= counter(16 downto 15);
+
+    process(selection, looplen_unit, looplen_tens, lfsrout_unit, lfsrout_tens)
+    begin
+        if (selection = "00") then
+            an &lt;= "0001";
+            decoder &lt;= looplen_unit(3 downto 0);
+        elsif (selection = "01") then
+            an &lt;= "0010";
+            decoder &lt;= looplen_tens(3 downto 0);
+        elsif (selection = "10") then
+            an &lt;= "0100";
+            decoder &lt;= lfsrout_unit(3 downto 0);
+        else
+            an &lt;= "1000";
+            decoder &lt;= lfsrout_tens(3 downto 0);
+        end if;
+    end process;
+
+    process(decoder)
+    begin
+        case decoder is
+            when "0000" =&gt; cat &lt;= "1111110"; -- 0
+            when "0001" =&gt; cat &lt;= "0110000"; -- 1
+            when "0010" =&gt; cat &lt;= "1101101"; -- 2
+            when "0011" =&gt; cat &lt;= "1111001"; -- 3
+            when "0100" =&gt; cat &lt;= "0110011"; -- 4
+            when "0101" =&gt; cat &lt;= "1011011"; -- 5
+            when "0110" =&gt; cat &lt;= "1011111"; -- 6
+            when "0111" =&gt; cat &lt;= "1110000"; -- 7
+            when "1000" =&gt; cat &lt;= "1111111"; -- 8
+            when "1001" =&gt; cat &lt;= "1111011"; -- 9
+            when others =&gt; cat &lt;= "0000000"; -- Default case to handle other input values
+        end case;
+    end process;
+end Behavioral;</vhdl>
+  <vhdl name="BinaryToBCD">LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY BinaryToBCD IS
+  PORT (
+    clk: IN std_logic;
+    binary_input: IN std_logic_vector(4 DOWNTO 0);
+    bcd_tens: OUT std_logic_vector(3 DOWNTO 0);
+    bcd_units: OUT std_logic_vector(3 DOWNTO 0)
+  );
+END ENTITY BinaryToBCD;
+
+ARCHITECTURE Behavioral OF BinaryToBCD IS
+BEGIN
+  PROCESS (clk)
+    VARIABLE decimal_value: integer;
+  BEGIN
+    IF rising_edge(clk) THEN
+      decimal_value := to_integer(unsigned(binary_input));
+      bcd_tens &lt;= std_logic_vector(to_unsigned(decimal_value / 10, bcd_tens'length));
+      bcd_units &lt;= std_logic_vector(to_unsigned(decimal_value mod 10, bcd_units'length));
+    END IF;
+  END PROCESS;
+END ARCHITECTURE Behavioral;</vhdl>
+</project>
