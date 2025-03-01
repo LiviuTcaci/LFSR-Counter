@@ -1,62 +1,85 @@
-# LFSR-Based Counter
+# Linear Feedback Shift Register (LFSR) Counter
 
-This project implements LFSR (Linear Feedback Shift Register) counter schemes based on the designs described in Chapter 4 of *"Proiectarea sistemelor numerice folosind tehnologia FPGA"* by S. Nedevschi, Z. Baruch, and O. Creţ. The system accepts a user-specified counting loop length and a mode selection that configures the counter to operate as either a 4-bit or a 5-bit variant.
+A VHDL implementation of customizable 4-bit and 5-bit Linear Feedback Shift Register (LFSR) counters for Basys3 FPGA board.
 
 ## Overview
 
-- **LFSR Counter Implementation:**  
-  The design includes separate VHDL modules for both 4-bit and 5-bit LFSR counters. A mode input selects which variant to use.
+This project implements LFSR counter schemes as described in "Proiectarea sistemelor numerice folosind tehnologia FPGA" by S. Nedevschi, Z. Baruch, and O. Creț. The system allows users to:
+- Select between 4-bit or 5-bit LFSR counter variants
+- Configure the loop length (modulo count)
+- Visualize the counting sequence on a 7-segment display
 
-- **User Inputs:**  
-  The system receives the desired loop length (via a button handler) and a mode selection signal that determines the counter width.
+## Theory
 
-- **Supporting Modules:**  
-  The project is composed of multiple VHDL components including:
-  - Frequency dividers (for clock generation)
-  - A control unit to manage state transitions and loading of the LFSR
-  - A button handler for capturing the loop length input
-  - Conversion blocks (e.g., Binary-to-BCD, Seven-segment display controllers) for visual output
-  - Auxiliary components such as multiplexers and decoders
+Linear Feedback Shift Registers (LFSRs) are efficient counters that generate pseudo-random sequences with specific cycle lengths. Unlike conventional binary counters, LFSRs achieve:
+- Faster operation due to simpler feedback paths
+- Efficient FPGA implementation using fewer resources
+- Customizable sequence lengths without excessive logic
 
-- **Simulation and Synthesis:**  
-  The repository includes Logisim circuit files (`*.circ`) for simulation and a complete set of VHDL source files (in the `LFSR_materials/hdl_export` directory) for synthesis on FPGA platforms.
+The implementation uses lookup tables for different modulo counts, with special feedback signal decoding for various loop lengths:
+- 4-bit LFSR: Configurable from modulo-2 to modulo-16
+- 5-bit LFSR: Configurable from modulo-2 to modulo-32
 
-## Project Structure
-```
-.
-├── DocumentatieLFSR_TLv2.docx       # Project documentation and design rationale
-├── LFSR.circ                        # Logisim simulation file for the LFSR counter
-└── LFSR_materials
-├── LFSRv0.1.circ                # Early simulation version
-├── LFSRv0.2.circ                # Updated simulation version
-├── LFSRv0.circ                  # Initial simulation file
-└── hdl_export                   # VHDL source files for FPGA synthesis
-├── BIN_BCD.vhd
-├── ButtonHandler.vhd
-├── C_gate.vhd
-├── ControlUnit.vhd
-├── DECODER_2x4.vhd
-├── D_7SEG.vhd
-├── Display.vhd
-├── LFSR.vhd
-├── MUX_4x1.vhd
-├── MainDesignLFSR.vhd
-├── SELECTIONS.vhd
-├── divisor_frecv100hz.vhd
-└── divisor_frecv1Mhz.vhd
-```
+## System Architecture
 
-## Build & Simulation
+The system is divided into two main units:
+1. **Control Unit (CU)** - Manages the system's state transitions:
+   - State A: Initial state, waiting for input parameters
+   - State B: Loading the LFSR values
+   - State C: Running the counter
+   - State D: Resetting the LFSR for next operation
 
-1. **Synthesis:**  
-   Use your preferred FPGA synthesis tool (e.g., Xilinx Vivado or Intel Quartus) to compile the VHDL files located in the `hdl_export` folder. The top-level design is `MainDesignLFSR.vhd`.
+2. **Execution Unit (EU)** - Contains the LFSR implementation and peripheral components:
+   - LFSR counter core with 4/5-bit configuration
+   - Feedback path selection based on modulo count
+   - Display management for visualization
+   - Input handling for parameter selection
 
-2. **Simulation:**  
-   You can simulate the design using ModelSim or any other VHDL simulator. The provided `.circ` files can be used with Logisim-evolution for a visual simulation of the counter.
+## Features
 
-## Future Improvements
+- Selectable 4-bit or 5-bit LFSR counter modes
+- Configurable loop length (2-15 for 4-bit, 2-31 for 5-bit)
+- Real-time display of counter values on 7-segment display
+- Button interface for parameter input
+- Automatic detection of cycle completion
 
-- **Dynamic Feedback Polynomial Selection:**  
-  Future work may include adding a mechanism to dynamically select the feedback polynomial.
-- **Enhanced User Interface:**  
-  Improvements in user input handling and display features could further refine the system.
+## Components
+
+- **MainDesignLFSR**: Top-level entity connecting all components
+- **ControlUnit**: State machine for controlling system operation
+- **LFSR**: Core implementation of the shift register with feedback
+- **ButtonHandler**: Manages button inputs for loop length configuration
+- **SELECTIONS**: Selects feedback connections based on counter parameters
+- **C_gate**: Implements additional feedback logic based on lookup tables
+- **Display**: Manages 7-segment display output
+- **Frequency Dividers**: Generate appropriate clock signals from the master clock
+
+## Setup and Usage
+
+### Hardware Requirements
+- Basys3 FPGA board
+- Mini-USB cable for programming
+
+### Configuration
+1. Connect the Basys3 board to your computer
+2. Program the FPGA with the compiled bitstream
+
+### Operation
+1. Use the MODE switch to select between 4-bit (OFF) or 5-bit (ON) LFSR mode
+2. Press the LENLOOP button to set the desired loop length
+   - For 4-bit mode: values 2-15
+   - For 5-bit mode: values 2-31
+3. Press the START button to begin the counting sequence
+4. The 7-segment display will show the current count value
+5. The counter will automatically stop after completing the cycle
+
+## Development Environment
+
+- Xilinx Vivado Design Suite (for synthesis and implementation)
+- VHDL language for RTL design
+- Basys3 constraint files for pin mapping
+
+## References
+
+1. Nedevschi, S., Baruch, Z., & Creț, O. "Proiectarea sistemelor numerice folosind tehnologia FPGA"
+2. Xilinx documentation for Basys3 board
